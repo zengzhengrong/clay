@@ -42,7 +42,8 @@ func (s *SumImpl) Sum(ctx context.Context, r *pb.SumRequest) (*pb.SumResponse, e
 // GetDescription is a simple alias to the ServiceDesc constructor.
 // It makes it possible to register the service implementation @ the server.
 func (s *SumImpl) GetDescription() transport.ServiceDesc {
-	return pb.NewSummatorServiceDesc(s)
+	desc := pb.NewSummatorServiceDesc(s)
+	return desc
 }
 
 func main() {
