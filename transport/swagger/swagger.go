@@ -45,10 +45,10 @@ func WithSecurityDefinitions(secDef spec.SecurityDefinitions) Option {
 	}
 }
 
-func WithSecurityAll(SecurityDefinitionName string) Option {
+func WithSecurityAll(securityDefinitionName string) Option {
 	return func(swagger *spec.Swagger) {
 		securityTypeOpts := make(map[string][]string)
-		securityTypeOpts[SecurityDefinitionName] = []string{}
+		securityTypeOpts[securityDefinitionName] = []string{}
 		swagger.Security = []map[string][]string{securityTypeOpts}
 	}
 }
